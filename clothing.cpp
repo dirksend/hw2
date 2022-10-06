@@ -1,6 +1,6 @@
 #include <sstream>
 #include <iomanip>
-#include "util.cpp"
+#include "util.h"
 #include "product.h"
 #include "clothing.h"
 

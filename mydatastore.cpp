@@ -3,6 +3,7 @@
 #include <vector>
 #include "product.h"
 #include "user.h"
+#include "util.h"
 #include "mydatastore.h"
 
 MyDataStore::~MyDataStore() { }

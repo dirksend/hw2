@@ -13,20 +13,27 @@
 template <typename T>
 std::set<T> setIntersection(std::set<T>& s1, std::set<T>& s2)
 {
+	std::set<T> output;
+	for (typename std::set<T>::iterator it = s1.begin(); it != s1.end(); it ++) {
+		if (s2.find(*it) != s2.end()) {
+			output.insert(*it);
+		}
+	}
 
-
-
-
-
+	return output;
 }
 template <typename T>
 std::set<T> setUnion(std::set<T>& s1, std::set<T>& s2)
 {
+	std::set<T> output;
+	for (typename std::set<T>::iterator it = s1.begin(); it != s1.end(); it ++) {
+		output.insert(*it);
+	}
+	for (typename std::set<T>::iterator it = s2.begin(); it != s2.end(); it ++) {
+		output.insert(*it);
+	}
 
-
-
-
-
+	return output;
 }
 
 /***********************************************/
@@ -35,7 +42,7 @@ std::set<T> setUnion(std::set<T>& s1, std::set<T>& s2)
 
 std::string convToLower(std::string src);
 
-std::set<std::string> parseStringToWords(std::string line);
+std::set<std::string> parseStringToWords(std::string line); // {std::set<std::string> tst; return tst;}
 
 // Used from http://stackoverflow.com/questions/216823/whats-the-best-way-to-trim-stdstring
 // Removes any leading whitespace

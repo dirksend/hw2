@@ -27,21 +27,21 @@ Movie::~Movie()
 
 std::set<std::string> Movie::keywords() const {
     std::set<std::string> words = parseStringToWords(name_);
-    words.insert(genre_));
+    words.insert(genre_);
     return words;
 };
 
-bool ProductBook::isMatch(std::vector<std::string>& searchTerms) const {
+bool Movie::isMatch(std::vector<std::string>& searchTerms) const {
     return false;
 };
 
-std::string ProductBook::displayString() const {
+std::string Movie::displayString() const {
     return ""
 		+ category_ + ": " + name_ + " | (" + genre_ + ")\n"
         +  "  Rating: " + rating_ + "\n";
 };
 
-void ProductBook::dump(std::ostream& os) const
+void Movie::dump(std::ostream& os) const
 {
     os << category_ << endl
        << name_ << endl

@@ -1,7 +1,7 @@
 #include <sstream>
 #include <iomanip>
-#include "util.cpp"
-#include "product.cpp"
+#include "util.h"
+#include "product.h"
 #include "book.h"
 
 using namespace std;

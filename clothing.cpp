@@ -1,7 +1,7 @@
 #include <sstream>
 #include <iomanip>
 #include "util.cpp"
-#include "product.cpp"
+#include "product.h"
 #include "clothing.h"
 
 using namespace std;
@@ -32,17 +32,17 @@ std::set<std::string> Clothing::keywords() const {
     return words;
 };
 
-bool ProductBook::isMatch(std::vector<std::string>& searchTerms) const {
+bool Clothing::isMatch(std::vector<std::string>& searchTerms) const {
     return false;
 };
 
-std::string ProductBook::displayString() const {
+std::string Clothing::displayString() const {
     return ""
 		+ category_ + ": " + name_ + " | (" + size_ + ")\n"
         +  "  Size: " + size_ + "\n";
 };
 
-void ProductBook::dump(std::ostream& os) const
+void Clothing::dump(std::ostream& os) const
 {
     os << category_ << endl
        << name_ << endl

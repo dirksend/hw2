@@ -1,12 +1,12 @@
 #include <sstream>
 #include <iomanip>
-#include "../util.cpp"
-#include "../product.cpp"
-#include "product_book.h"
+#include "util.cpp"
+#include "product.cpp"
+#include "book.h"
 
 using namespace std;
 
-ProductBook::ProductBook(
+Book::Book(
     const std::string name,
     double price,
     int qty,
@@ -20,12 +20,12 @@ ProductBook::ProductBook(
 
 }
 
-ProductBook::~ProductBook()
+Book::~Book()
 {
 
 }
 
-std::set<std::string> ProductBook::keywords() const {
+std::set<std::string> Book::keywords() const {
     std::set<std::string> nameWords = parseStringToWords(name_);
     std::set<std::string> authorWords = parseStringToWords(name_);
     std::set<std::string> words = setUnion(nameWords, authorWords);
@@ -33,17 +33,17 @@ std::set<std::string> ProductBook::keywords() const {
     return words;
 };
 
-bool ProductBook::isMatch(std::vector<std::string>& searchTerms) const {
+bool Book::isMatch(std::vector<std::string>& searchTerms) const {
     return false;
 };
 
-std::string ProductBook::displayString() const {
+std::string Book::displayString() const {
     return ""
 				+ category_ + ": " + name_ + " | (" + std::to_string(qty_) + ")\n"
         +  "  ISBN: " + isbn_ + "\n";
 };
 
-void ProductBook::dump(std::ostream& os) const
+void Book::dump(std::ostream& os) const
 {
     os << category_ << endl
        << name_ << endl

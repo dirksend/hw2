@@ -1,23 +1,23 @@
-#ifndef PRODUCT_BOOK_H
-#define PRODUCT_BOOK_H
+#ifndef BOOK_H
+#define BOOK_H
 #include <iostream>
 #include <string>
 #include <set>
 #include <vector>
 #include <algorithm>
 
-#include "../product.h"
+#include "product.h"
 
-class ProductBook : public Product {
+class Book : public Product {
 public:
-    ProductBook(
+    Book(
 				const std::string name,
 				double price,
 				int qty,
 				std::string isbn,
 				std::string author
 		);
-    ~ProductBook();
+    ~Book();
 
     /**
      * Returns the appropriate keywords that this product should be associated with

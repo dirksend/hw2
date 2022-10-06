@@ -1,12 +1,12 @@
 #include <sstream>
 #include <iomanip>
-#include "../util.cpp"
-#include "../product.cpp"
-#include "product_clothing.h"
+#include "util.cpp"
+#include "product.cpp"
+#include "clothing.h"
 
 using namespace std;
 
-ProductClothing::ProductClothing(
+Clothing::Clothing(
     const std::string name,
     double price,
     int qty,
@@ -20,12 +20,12 @@ ProductClothing::ProductClothing(
 
 }
 
-ProductClothing::~ProductClothing()
+Clothing::~Clothing()
 {
 
 }
 
-std::set<std::string> ProductClothing::keywords() const {
+std::set<std::string> Clothing::keywords() const {
     std::set<std::string> nameWords = parseStringToWords(name_);
     std::set<std::string> brandWords = parseStringToWords(brand_);
     std::set<std::string> words = setUnion(nameWords, brandWords);

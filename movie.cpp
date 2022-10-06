@@ -1,12 +1,12 @@
 #include <sstream>
 #include <iomanip>
-#include "../util.cpp"
-#include "../product.cpp"
-#include "product_movie.h"
+#include "util.cpp"
+#include "product.cpp"
+#include "movie.h"
 
 using namespace std;
 
-ProductMovie::ProductMovie(
+Movie::Movie(
     const std::string name,
     double price,
     int qty,
@@ -20,12 +20,12 @@ ProductMovie::ProductMovie(
 
 }
 
-ProductMovie::~ProductMovie()
+Movie::~Movie()
 {
 
 }
 
-std::set<std::string> ProductMovie::keywords() const {
+std::set<std::string> Movie::keywords() const {
     std::set<std::string> words = parseStringToWords(name_);
     words.insert(genre_));
     return words;

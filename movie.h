@@ -1,23 +1,23 @@
-#ifndef PRODUCT_CLOTHING_H
-#define PRODUCT_CLOTHING_H
+#ifndef MOVIE_H
+#define MOVIE_H
 #include <iostream>
 #include <string>
 #include <set>
 #include <vector>
 #include <algorithm>
 
-#include "../product.h"
+#include "product.h"
 
-class ProductClothing : public Product {
+class Movie : public Product {
 public:
-    ProductClothing(
+    Movie(
 				const std::string name,
 				double price,
 				int qty,
-				std::string size,
-				std::string brand
+				std::string genre,
+				std::string rating
 		);
-    ~ProductClothing();
+    ~Movie();
 
     /**
      * Returns the appropriate keywords that this product should be associated with
@@ -40,7 +40,7 @@ public:
     void dump(std::ostream& os) const;
 
 protected:
-    std::string size_;
-    std::string brand_;
+    std::string genre_;
+    std::string rating_;
 };
 #endif
